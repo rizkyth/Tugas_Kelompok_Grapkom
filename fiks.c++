@@ -560,7 +560,7 @@ int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(800, 800);
-    glutCreateWindow("Kereta Api + pemandangan");
+    glutCreateWindow("Kelompok 6 - TB");
     inisialisasi_opengl();
     glutDisplayFunc(tampilkan_scene);
     glutKeyboardFunc(tangani_input_keyboard);
