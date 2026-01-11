@@ -21,26 +21,7 @@ void gambar_kubus_skala(float skala_x, float skala_y, float skala_z) {
     glutSolidCube(1.0f);
     glPopMatrix();
 }
-// Rizky
-void gambar_silinder(float jari_jari, float tinggi) {
-    GLUquadric* quadric = gluNewQuadric();
-    gluQuadricNormals(quadric, GLU_SMOOTH);
-    
-    glPushMatrix();
-        // Rotasi agar silinder sejajar sumbu Y
-        glRotatef(-90, 1, 0, 0);
-        gluCylinder(quadric, jari_jari, jari_jari, tinggi, 24, 4);
-        
-        // Tutup bawah
-        gluDisk(quadric, 0, jari_jari, 24, 1);
-        
-        // Tutup atas
-        glTranslatef(0, 0, tinggi);
-        gluDisk(quadric, 0, jari_jari, 24, 1);
-    glPopMatrix();
-    
-    gluDeleteQuadric(quadric);
-}
+
 // Rizky
 void gambar_roda(float jari_jari, float tebal) {
     // Velg: Torus berwarna abu-abu gelap
@@ -477,10 +458,7 @@ void gambar_rumah_di_posisi(float pos_x, float pos_z) {
 void tampilkan_scene() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
-    float pos_kamera_x = 0.0f;
-    float pos_kamera_y = 3.0f;
-    float pos_kamera_z = 16.0f;
-    gluLookAt(pos_kamera_x, pos_kamera_y, pos_kamera_z,  // Posisi mata
+    gluLookAt(0.0f, 3.0f, 16.0f,  // Posisi mata
               0.0f, 0.0f, 0.0f,                            // Target lihat
               0.0f, 1.0f, 0.0f);
     GLfloat posisi_cahaya[] = {10.0f, 30.0f, 10.0f, 1.0f};
