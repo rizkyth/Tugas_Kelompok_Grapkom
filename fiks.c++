@@ -1,4 +1,3 @@
-
 #include <GL/freeglut.h>
 #include <cmath>
 // Parameter gerakan dan animasi
@@ -496,6 +495,7 @@ void tampilkan_scene() {
     glPopMatrix(); // Akhir gambar kereta
     glutSwapBuffers(); // Tampilkan hasil
 }
+// rizky
 void perbarui_animasi(int v) {
     sudut_roda += (360.0f * kecepatan * 0.6f); // Rotasi roda
     if (sudut_roda > 360.0f) sudut_roda -= 360.0f; //   Reset rotasi roda
@@ -503,6 +503,7 @@ void perbarui_animasi(int v) {
     glutTimerFunc(16, perbarui_animasi, 0); // Panggil perbarui_animasi setiap 16ms
 }
 
+// Rizky 
 void tangani_input_keyboard(unsigned char tombol, int x, int y) {
     switch (tombol) {
         case 'a': 
@@ -537,7 +538,7 @@ void tangani_input_keyboard(unsigned char tombol, int x, int y) {
     }
 }
 
-
+// Rizky
 void inisialisasi_opengl() {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_LIGHTING);
@@ -556,6 +557,7 @@ void inisialisasi_opengl() {
     gluPerspective(60.0, 1.0, 0.1, 500.0);  // FOV 60°, aspek 1:1
     glMatrixMode(GL_MODELVIEW);
 }
+//Rizky
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
